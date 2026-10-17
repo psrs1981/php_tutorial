@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Responsive Images</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background: #f4f7f9;
+      }
+
+      .demo-area {
+        max-width: 700px;
+        border: 2px dashed #6c757d;
+        background: #ffffff;
+        padding: 1rem;
+      }
+
+      .narrow-demo {
+        max-width: 360px;
+      }
+
+      pre {
+        margin: 0;
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container py-5">
+      <header class="mb-5">
+        <h1>Responsive Images in Bootstrap</h1>
+        <p class="lead mb-0">
+          A responsive image automatically becomes smaller when its parent
+          container becomes smaller.
+        </p>
+      </header>
+
+      <section class="mb-5">
+        <h2 class="h3">1. Use the <code>.img-fluid</code> class</h2>
+        <p>
+          Bootstrap's <code>.img-fluid</code> class applies these CSS rules:
+        </p>
+        <div class="bg-dark text-light rounded p-3 mb-3">
+          <pre><code>max-width: 100%;
+height: auto;</code></pre>
+        </div>
+        <ul>
+          <li>
+            <code>max-width: 100%</code> prevents the image from becoming wider
+            than its container.
+          </li>
+          <li>
+            <code>height: auto</code> preserves the image's original
+            proportions.
+          </li>
+        </ul>
+      </section>
+
+      <section class="mb-5">
+        <h2 class="h3">2. Live responsive example</h2>
+        <p>
+          Resize the browser window. The image will shrink with the container.
+        </p>
+        <div class="demo-area">
+          <img
+            src="https://picsum.photos/id/29/1200/600"
+            class="img-fluid"
+            alt="Mountain landscape"
+          />
+        </div>
+        <div class="bg-dark text-light rounded p-3 mt-3">
+          <pre><code>&lt;img src="mountain.jpg" class="img-fluid" alt="Mountain landscape"&gt;</code></pre>
+        </div>
+      </section>
+
+      <section class="mb-5">
+        <h2 class="h3">3. The image follows its parent</h2>
+        <p>
+          This parent is only 360 pixels wide, so the same large image fits
+          inside it.
+        </p>
+        <div class="demo-area narrow-demo">
+          <img
+            src="https://picsum.photos/id/29/1200/600"
+            class="img-fluid"
+            alt="Mountain landscape inside a narrow container"
+          />
+        </div>
+      </section>
+
+      <section class="mb-5">
+        <h2 class="h3">4. Useful Bootstrap image classes</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <h3 class="h5"><code>.rounded</code></h3>
+            <img
+              src="https://picsum.photos/id/1025/600/400"
+              class="img-fluid rounded"
+              alt="Dog with rounded corners"
+            />
+            <p class="mt-2">Adds rounded corners.</p>
+          </div>
+          <div class="col-md-4">
+            <h3 class="h5"><code>.rounded-circle</code></h3>
+            <img
+              src="https://picsum.photos/id/64/500/500"
+              class="img-fluid rounded-circle"
+              alt="Portrait displayed as a circle"
+            />
+            <p class="mt-2">Displays a square image as a circle.</p>
+          </div>
+          <div class="col-md-4">
+            <h3 class="h5"><code>.img-thumbnail</code></h3>
+            <img
+              src="https://picsum.photos/id/106/600/400"
+              class="img-fluid img-thumbnail"
+              alt="Flowers displayed as a thumbnail"
+            />
+            <p class="mt-2">Adds a small border and padding.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-5">
+        <h2 class="h3">5. Responsive image inside the Bootstrap grid</h2>
+        <p>
+          The columns stack on small screens and sit side by side on medium and
+          larger screens.
+        </p>
+        <div class="row g-4 align-items-center">
+          <div class="col-md-6">
+            <img
+              src="https://picsum.photos/id/42/900/600"
+              class="img-fluid rounded"
+              alt="Coffee shop table"
+            />
+          </div>
+          <div class="col-md-6">
+            <h3>Image and text</h3>
+            <p>
+              The image uses <code>.img-fluid</code>, while
+              <code>.col-md-6</code> controls the responsive column width.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="alert alert-primary" role="note">
+        <h2 class="h4">Remember</h2>
+        <p class="mb-0">
+          Use <code>class="img-fluid"</code> on images that must fit their
+          parent container. Always include meaningful <code>alt</code> text.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

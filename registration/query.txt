@@ -1,0 +1,27 @@
+CREATE TABLE registrations (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(100) NOT NULL,
+    last_name VARCHAR(100) NOT NULL,
+    gender ENUM(
+        'male',
+        'female',
+        'other',
+        'prefer_not_to_say'
+    ) NOT NULL,
+    date_of_birth DATE NOT NULL,
+    mobile VARCHAR(10) NOT NULL,
+    email VARCHAR(254) NOT NULL,
+    address TEXT NOT NULL,
+    postal_code VARCHAR(20) NOT NULL,
+    username VARCHAR(100) NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    UNIQUE KEY uq_registrations_username (username),
+    UNIQUE KEY uq_registrations_email (email),
+    CONSTRAINT chk_registrations_mobile CHECK (
+        CHAR_LENGTH(mobile) = 10 AND mobile NOT REGEXP '[^0-9]'
+    )
+) ENGINE=InnoDB
+  DEFAULT CHARSET=utf8mb4
+  COLLATE=utf8mb4_unicode_ci;
